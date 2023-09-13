@@ -40,7 +40,8 @@ class Clicker extends Component
             ]
             );
 
-        
+        $this->reset(['name','email','password']);
+        request()->session()->flash('success','User created successfully!');
     }
 
     public function render()

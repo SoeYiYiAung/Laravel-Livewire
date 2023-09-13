@@ -5,7 +5,9 @@
     <button wire:click="handleClick">Click Me</button>
 
     <button wire:click="createNewUser">Create New User</button> --}}
-
+    @if (session('success'))
+        <span class="bg-green-300 rounded">{{session('success')}}</span>
+    @endif
     <form wire:submit="createNewUser" action="" method="post">
         <input wire:model="name" type="text" placeholder="name">
         @error('name')
