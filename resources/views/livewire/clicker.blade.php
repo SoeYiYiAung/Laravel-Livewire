@@ -8,8 +8,19 @@
 
     <form wire:submit="createNewUser" action="" method="post">
         <input wire:model="name" type="text" placeholder="name">
+        @error('name')
+            <span class="text-red-500 text-xs"{{$message}}></span>
+        @enderror
+
         <input wire:model="email" type="email" placeholder="email">
+        @error('email')
+            <span class="text-red-500 text-xs"{{$message}}></span>
+        @enderror
+
         <input wire:model="password" type="password" placeholder="password">
+        @error('password')
+            <span class="text-red-500 text-xs"{{$message}}></span>
+        @enderror
 
         <button>Create</button>
     </form>
