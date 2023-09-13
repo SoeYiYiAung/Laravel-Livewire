@@ -7,6 +7,10 @@ use Livewire\Component;
 
 class Clicker extends Component
 {
+    public $name;
+    public $email;
+    public $password;
+
     public function handleClick()
     {
         dump("Click");
@@ -16,9 +20,9 @@ class Clicker extends Component
     {
         User::create(
             [
-                'name' => "test user",
-                'email'=> "test@gmail.com",
-                'password'=> "123456"
+                'name' => $this->name,
+                'email'=> $this->email,
+                'password'=> $this->password
             ]
             );
 
@@ -31,7 +35,6 @@ class Clicker extends Component
         $users=User::all();
 
         return view('livewire.clicker',[
-            'title' => $title,
             'users'=>$users
         ]);
     }
